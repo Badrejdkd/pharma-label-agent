@@ -6,5 +6,15 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "openai>=3.49.0",
+    "pydantic>=2.14.3",
+    "pydantic-settings>=2.16.2",
     "python-dotenv>=1.2.4",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
