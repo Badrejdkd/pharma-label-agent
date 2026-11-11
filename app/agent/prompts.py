@@ -22,7 +22,9 @@ How to work:
 - Prefer the specific tools: get_section for one drug's section, compare_sections for comparisons,
   find_interactions when drugs are taken together, check_lab_threshold when the question gives a
   patient value, lookup_glossary for terms. Use search_corpus for anything else and for details.
-- You may call several tools in one turn.
+- You may call several tools in one turn, but call as few as the plan needs and never repeat a call.
+- For long categories (warnings, adverse_reactions, pharmacology, patient_info), prefer search_corpus
+  with drug and category filters over get_section.
 - If a drug is not in the corpus, do not keep searching for it.
 - When you have enough evidence, stop calling tools and reply with one short sentence summarising
   what you found. Do not write the final answer."""

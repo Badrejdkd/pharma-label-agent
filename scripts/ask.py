@@ -16,7 +16,8 @@ from app.bootstrap import build_agent
 
 sys.stdout.reconfigure(encoding="utf-8")
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
-logging.getLogger("httpx").setLevel(logging.WARNING)
+for noisy in ("httpx", "httpx2"):
+    logging.getLogger(noisy).setLevel(logging.WARNING)
 
 PUBLIC_QUESTIONS = [
     "What are the main contraindications for warfarin?",

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Drug label research agent</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <header class="masthead">
+      <h1>Drug label research agent</h1>
+      <p class="status" id="status" role="status">Connecting to the agent…</p>
+    </header>
+
+    <main class="layout">
+      <section class="ask" aria-labelledby="ask-title">
+        <div class="boxed-warning" role="note">
+          <p class="boxed-warning__title">WARNING: NOT MEDICAL ADVICE</p>
+          <p>
+            Answers come only from 21 FDA labels and MedlinePlus leaflets, for a technical demonstration.
+            Always ask a doctor or pharmacist before starting, stopping or combining medicines.
+          </p>
+        </div>
+
+        <h2 id="ask-title" class="visually-hidden">Ask a question</h2>
+        <form id="ask-form" class="ask-form">
+          <label for="question">Your question</label>
+          <textarea
+            id="question"
+            name="question"
+            rows="3"
+            maxlength="1000"
+            required
+            placeholder="Ask about contraindications, interactions, dosage or lab thresholds…"
+          ></textarea>
+          <div class="ask-form__actions">
+            <button type="submit" id="ask-button">Ask the labels</button>
+            <span class="hint">Ctrl + Enter to send</span>
+          </div>
+        </form>
+      </section>
+
+      <details class="examples" id="examples" open>
+        <summary>Examples</summary>
+        <ul>
+          <li><button type="button" class="example">What are the main contraindications for warfarin?</button></li>
+          <li><button type="button" class="example">Compare the contraindications of warfarin and apixaban. What conditions are shared and which are unique to each drug?</button></li>
+          <li><button type="button" class="example">A patient currently on warfarin is prescribed sertraline. What is the risk of bleeding and what monitoring is recommended?</button></li>
+          <li><button type="button" class="example">A patient with an eGFR of 25 mL/min is being considered for metformin. Is metformin contraindicated at this level of renal function, and what is the threshold?</button></li>
+          <li><button type="button" class="example">Puis-je prendre de l'ibuprofène avec de l'apixaban ?</button></li>
+        </ul>
+      </details>
+
+      <section class="result" id="result" aria-live="polite" hidden>
+        <ol class="progress" id="progress" aria-label="What the agent is doing"></ol>
+
+        <article class="answer" id="answer" hidden>
+          <p class="verdict" id="verdict"></p>
+          <div class="answer__body" id="answer-body"></div>
+          <div class="flags" id="flags" hidden>
+            <h3>Read with care</h3>
+            <ul id="flags-list"></ul>
+          </div>
+          <p class="disclaimer" id="disclaimer"></p>
+
+          <details class="trace" id="trace">
+            <summary>How the agent answered</summary>
+            <div id="trace-body"></div>
+          </details>
+        </article>
+
+        <p class="error" id="error" role="alert" hidden></p>
+      </section>
+
+      <aside class="sources" id="sources" aria-labelledby="sources-title" hidden>
+        <h2 id="sources-title">Sources</h2>
+        <ol id="sources-list"></ol>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <a href="/docs">API documentation</a>
+    </footer>
+  </body>
+</html>

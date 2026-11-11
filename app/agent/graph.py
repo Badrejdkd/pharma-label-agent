@@ -16,7 +16,7 @@
 """
 
 from __future__ import annotations
-
+from collections.abc import Iterator
 import logging
 import operator
 import time
@@ -35,7 +35,7 @@ logger = logging.getLogger(__name__)
 
 MAX_REVISIONS = 1  # nombre de réécritures autorisées après la première critique
 MAX_RESEARCH_RETRIES = 1  # retours du critique vers la recherche
-
+RUN_CONFIG = {"recursion_limit": 60}  # filet de sécurité de LangGraph contre les boucles
 
 class LLM(Protocol):
     """Ce dont l'agent a besoin : `LLMClient` le respecte, le faux LLM des tests aussi."""
@@ -76,6 +76,22 @@ def format_evidence(chunks: list[Chunk]) -> str:
     """Passages présentés au rédacteur et au critique."""
     return "\n\n".join(f"[{c.chunk_id}] ({c.file} | {c.section})\n{c.text}" for c in chunks)
 
+def describe_step(node: str, update: dict[str, Any]) -> dict[str, Any]:
+    """Résumé d'une étape du graphe, envoyé à l'interface pendant le calcul."""
+    if node == "plan":
+        plan: Plan = update["plan"]
+        return {"question_type": plan.question_type, "sub_questions": plan.sub_questions}
+    if node == "agent":
+        calls = update["messages"][-1].get("tool_calls", [])
+        return {"requested_tools": [call["function"]["name"] for call in calls]}
+    if node == "tools":
+        return {"calls": [trace.model_dump(mode="json") for trace in update.get("tool_calls", [])]}
+    if node == "write":
+        return {"revision": update.get("revisions", 0)}
+    if node == "critique":
+        review: Review = update["review"]
+        return {"verdict": review.verdict, "checked_by_llm": "llm_calls" in update}
+    return {}
 
 class Agent:
     """Assemble le graphe et l'exécute pour une question."""
@@ -112,10 +128,22 @@ class Agent:
     def run(self, question: str) -> AgentResult:
         """Répond à une question : exécute le graphe du début à la fin."""
         start = time.perf_counter()
-        state = self.graph.invoke({"question": question}, config={"recursion_limit": 60})
+        state = self.graph.invoke({"question": question}, config=RUN_CONFIG)
         result: AgentResult = state["result"]
         result.meta["latency_ms"] = round((time.perf_counter() - start) * 1000)
         return result
+
+    def stream(self, question: str) -> Iterator[dict[str, Any]]:
+        """Comme `run`, mais publie un événement après chaque nœud (pour l'interface en direct)."""
+        start = time.perf_counter()
+        for update in self.graph.stream({"question": question}, config=RUN_CONFIG, stream_mode="updates"):
+            for node, data in update.items():
+                if node == "finalize":
+                    result: AgentResult = data["result"]
+                    result.meta["latency_ms"] = round((time.perf_counter() - start) * 1000)
+                    yield {"type": "result", "result": result.model_dump(mode="json")}
+                else:
+                    yield {"type": "step", "node": node, "detail": describe_step(node, data)}
 
     # ------------------------------------------------------------------ #
     # Nœuds
