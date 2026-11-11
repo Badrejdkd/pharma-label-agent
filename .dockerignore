@@ -1,0 +1,25 @@
+# Secrets : les évaluateurs injectent leur propre .env avec --env-file
+.env
+
+# Énoncé confidentiel
+assignment-pharma.pdf
+
+# Environnements, caches et fichiers générés
+.venv/
+.cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Inutile dans l'image
+.git/
+.gitignore
+.gitattributes
+tests/
+scripts/
+eval/
+docs/
+*.md
+!corpus/*.md
