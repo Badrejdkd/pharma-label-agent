@@ -1,0 +1,7 @@
+# Intégration continue GitLab : les tests tournent à chaque push (aucun appel réseau au LLM).
+test:
+  image: python:3.11-slim
+  script:
+    - pip install --quiet uv==0.13.4
+    - uv sync --frozen
+    - uv run pytest -q

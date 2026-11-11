@@ -1,7 +1,7 @@
 [project]
 name = "pharma-agent"
 version = "0.1.0"
-description = "Add your description here"
+description = "Agentic research assistant over FDA drug labels (Syntax Systems GenAI assignment)"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [

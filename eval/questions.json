@@ -1,0 +1,86 @@
+[
+  {
+    "id": "public-1",
+    "set": "public",
+    "question": "What are the main contraindications for warfarin?",
+    "expected_files": ["dailymed-warfarin.md"],
+    "facts": ["pregnan", "hemorrhagic|blood dyscrasia", "malignant hypertension", "spinal puncture|lumbar", "hypersensitivity"]
+  },
+  {
+    "id": "public-2",
+    "set": "public",
+    "question": "Compare the contraindications of warfarin and apixaban. What conditions are shared and which are unique to each drug?",
+    "expected_files": ["dailymed-warfarin.md", "dailymed-apixaban.md"],
+    "facts": ["active pathological bleeding", "hypersensitivity", "pregnan", "shared|both"]
+  },
+  {
+    "id": "public-3",
+    "set": "public",
+    "question": "A patient currently on warfarin is prescribed sertraline. What is the risk of bleeding and what monitoring is recommended?",
+    "expected_files": ["dailymed-warfarin.md", "dailymed-sertraline.md"],
+    "facts": ["bleed", "INR|international normalized ratio", "monitor"]
+  },
+  {
+    "id": "public-4",
+    "set": "public",
+    "question": "A patient with an eGFR of 25 mL/min is being considered for metformin. Is metformin contraindicated at this level of renal function, and what is the threshold?",
+    "expected_files": ["dailymed-metformin.md"],
+    "facts": ["contraindicated", "(below|less than|<)\\s*30", "45"]
+  },
+  {
+    "id": "extra-interaction",
+    "set": "extra",
+    "question": "Can a patient taking apixaban also take ibuprofen for back pain?",
+    "expected_files": ["dailymed-apixaban.md"],
+    "facts": ["bleed", "NSAID|nonsteroidal"]
+  },
+  {
+    "id": "extra-mechanism",
+    "set": "extra",
+    "question": "What is the mechanism of action of atorvastatin?",
+    "expected_files": ["dailymed-atorvastatin.md"],
+    "facts": ["HMG-CoA reductase"]
+  },
+  {
+    "id": "extra-max-dose",
+    "set": "extra",
+    "question": "What is the maximum daily dose of acetaminophen for adults, and what is the risk of exceeding it?",
+    "expected_files": ["dailymed-acetaminophen.md"],
+    "facts": ["4,?000 ?mg", "liver"]
+  },
+  {
+    "id": "extra-contrast",
+    "set": "extra",
+    "question": "Should metformin be stopped before a CT scan with iodinated contrast?",
+    "expected_files": ["dailymed-metformin.md"],
+    "facts": ["iodinated contrast", "30 (and|to) 60", "48 hours"]
+  },
+  {
+    "id": "extra-allergy",
+    "set": "extra",
+    "question": "Is amoxicillin contraindicated for someone with a serious allergy to penicillins?",
+    "expected_files": ["dailymed-amoxicillin.md"],
+    "facts": ["hypersensitivity|anaphyla", "beta-lactam|β-lactam|penicillin"]
+  },
+  {
+    "id": "extra-aggregation",
+    "set": "extra",
+    "question": "Which drugs in the corpus does the warfarin label list as increasing the risk of bleeding?",
+    "expected_files": ["dailymed-warfarin.md"],
+    "facts": ["aspirin", "ibuprofen|NSAID|nonsteroidal", "sertraline|serotonin reuptake"]
+  },
+  {
+    "id": "extra-out-of-corpus",
+    "set": "extra",
+    "question": "What are the contraindications of rivaroxaban?",
+    "expected_files": [],
+    "facts": ["not (covered|included|in the corpus|available)|does not (cover|contain|include)|no (FDA )?label|only .*glossary"]
+  },
+  {
+    "id": "extra-french",
+    "set": "extra",
+    "question": "Quels sont les effets indésirables les plus fréquents de la sertraline ?",
+    "expected_files": ["dailymed-sertraline.md"],
+    "facts": ["naus", "diarrh"]
+  }
+]
