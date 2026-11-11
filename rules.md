@@ -1,6 +1,5 @@
 # Instructions for AI coding assistants
 
-This file is read by Claude (and similar assistants) before working on this repository.
 
 ## Project
 
