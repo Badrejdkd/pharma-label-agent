@@ -1,17 +1,16 @@
 {
   "summary": {
     "questions": 12,
-    "errors": 1,
+    "errors": 0,
     "source_recall": 1.0,
-    "fact_coverage": 0.9090909090909091,
+    "fact_coverage": 0.9166666666666666,
     "disclaimer_rate": 1,
     "verdicts": {
-      "pass": 9,
-      "revised": 1,
+      "pass": 11,
       "flagged": 1
     },
-    "latency_median_s": 17.2,
-    "latency_max_s": 31.3
+    "latency_median_s": 14.25,
+    "latency_max_s": 20.7
   },
   "rows": [
     {
@@ -25,13 +24,11 @@
       "verdict": "pass",
       "disclaimer": true,
       "tools": [
-        "get_section",
-        "get_section",
-        "search_corpus"
+        "get_section"
       ],
-      "latency_s": 19.6,
-      "llm_calls": 6,
-      "answer": "The main contraindications for warfarin are pregnancy (except in pregnant women with mechanical heart valves who are at high risk of thromboembolism), conditions or procedures with substantial bleeding risk, hypersensitivity to warfarin or its components, and malignant hypertension. [1]\n\n- **Pregnancy:** Warfarin is contraindicated in pregnant women except those with mechanical heart valves who are at high risk of thromboembolism. [1]  \n- **Bleeding disorders or active bleeding risk:** This includes hemorrhagic tendencies or blood dyscrasias, active ulceration, or overt gastrointestinal, genitourinary, or respiratory tract bleeding. [1]  \n- **Certain serious cardiovascular, neurologic, and infectious conditions:** These include central nervous system hemorrhage, cerebral aneurysms, dissecting aorta, pericarditis or pericardial effusions, and bacterial endocarditis. [1]  \n- **Surgery or procedures with potentially uncontrollable bleeding:** These include recent or contemplated central nervous system or eye surgery, traumatic surgery resulting in large open surfaces, spinal puncture and similar diagnostic or therapeutic procedures, and major regional or lumbar block anesthesia. [1]  \n- **Obstetric conditions:** Threatened abortion, eclampsia, and preeclampsia are contraindications. [1]  \n- **Inability to safely adhere to treatment:** Unsupervised patients with conditions associated with a potential high level of non-compliance are contraindicated. [1]  \n- **Hypersensitivity:** Warfarin is contraindicated in patients with hypersensitivity to warfarin or any product component, including anaphylaxis. [1]  \n- **Malignant hypertension:** This is a listed contraindication. [1]"
+      "latency_s": 14.8,
+      "llm_calls": 5,
+      "answer": "The main contraindications for warfarin are pregnancy (with an exception for pregnant women with mechanical heart valves who are at high risk of thromboembolism), active or high-risk bleeding conditions, certain recent or planned procedures, hypersensitivity, and malignant hypertension. [1]\n\n- **Pregnancy:** Contraindicated in pregnant women, except pregnant women with mechanical heart valves who are at high risk of thromboembolism. [1]\n- **Hemorrhagic risk:** Hemorrhagic tendencies or blood dyscrasias; active ulceration or overt bleeding of the gastrointestinal, genitourinary, or respiratory tract; central nervous system hemorrhage; cerebral aneurysms; dissecting aorta; pericarditis and pericardial effusions; or bacterial endocarditis. [1]\n- **Surgery or invasive procedures with bleeding risk:** Recent or contemplated central nervous system or eye surgery, traumatic surgery producing large open surfaces, spinal puncture or other diagnostic or therapeutic procedures with potential for uncontrollable bleeding, and major regional or lumbar block anesthesia. [1]\n- **Obstetric conditions:** Threatened abortion, eclampsia, and preeclampsia. [1]\n- **Other:** Patients who cannot be supervised and have conditions associated with a potentially high level of non-compliance, hypersensitivity to warfarin or product components (including anaphylaxis), and malignant hypertension. [1]"
     },
     {
       "id": "public-2",
@@ -41,14 +38,14 @@
       "missing_files": [],
       "fact_coverage": 1.0,
       "missing_facts": [],
-      "verdict": "revised",
+      "verdict": "pass",
       "disclaimer": true,
       "tools": [
         "compare_sections"
       ],
-      "latency_s": 31.3,
-      "llm_calls": 7,
-      "answer": "Warfarin has a broader listed contraindication profile than apixaban. The labels have broad category-level overlap for bleeding and hypersensitivity, but the listed contraindications are not worded identically. [1][2]\n\n**Shared broad categories**\n- **Bleeding-related contraindications:** Apixaban is contraindicated in “active pathological bleeding,” whereas warfarin lists specific bleeding-related conditions, including active ulceration or overt bleeding of the gastrointestinal, genitourinary, or respiratory tract; central nervous system hemorrhage; cerebral aneurysms; dissecting aorta; pericarditis and pericardial effusions; and bacterial endocarditis. [1][2]\n- **Hypersensitivity:** Warfarin is contraindicated in hypersensitivity to warfarin or any component of the product, such as anaphylaxis, while apixaban is contraindicated in severe hypersensitivity reaction to ELIQUIS, such as anaphylactic reactions. [1][2]\n\n**Only warfarin**\n- Pregnancy, except in pregnant women with mechanical heart valves who are at high risk of thromboembolism. [1]\n- Hemorrhagic tendencies or blood dyscrasias. [1]\n- Recent or contemplated surgery of the central nervous system or eye, or traumatic surgery resulting in large open surfaces. [1]\n- Threatened abortion, eclampsia, or preeclampsia. [1]\n- Unsupervised patients with conditions associated with potential high level of non-compliance. [1]\n- Spinal puncture or other diagnostic or therapeutic procedures with potential for uncontrollable bleeding. [1]\n- Major regional or lumbar block anesthesia. [1]\n- Malignant hypertension. [1]\n\n**Apixaban label: no additional listed contraindications**\n- The apixaban label lists only active pathological bleeding and severe hypersensitivity reaction to ELIQUIS, which correspond to the broad shared bleeding and hypersensitivity categories above. [2]"
+      "latency_s": 16.5,
+      "llm_calls": 5,
+      "answer": "Warfarin and apixaban share contraindications related to active bleeding and hypersensitivity, although the labels use different wording. [1][2]\n\n**Shared**\n- Active bleeding: apixaban is contraindicated in “active pathological bleeding,” while warfarin contraindicates bleeding tendencies associated with “active ulceration or overt bleeding of the gastrointestinal, genitourinary, or respiratory tract” and central nervous system hemorrhage. [2][1]\n- Hypersensitivity: apixaban is contraindicated with a severe hypersensitivity reaction to ELIQUIS, including anaphylactic reactions; warfarin is contraindicated with hypersensitivity to warfarin or any product component, including anaphylaxis. [2][1]\n\n**Only warfarin**\n- Pregnancy, except in pregnant women with mechanical heart valves who are at high risk of thromboembolism. [1]\n- Hemorrhagic tendencies or blood dyscrasias. [1]\n- Recent or contemplated central nervous system or eye surgery, or traumatic surgery resulting in large open surfaces. [1]\n- Bleeding tendencies associated with cerebral aneurysms, dissecting aorta, pericarditis and pericardial effusions, or bacterial endocarditis. [1]\n- Threatened abortion, eclampsia, or preeclampsia. [1]\n- Unsupervised patients with conditions associated with a potential high level of non-compliance. [1]\n- Spinal puncture or other diagnostic or therapeutic procedures with potential for uncontrollable bleeding. [1]\n- Major regional or lumbar block anesthesia. [1]\n- Malignant hypertension. [1]\n\n**Only apixaban**\n- The apixaban label lists no contraindications beyond active pathological bleeding and severe hypersensitivity reaction to ELIQUIS. [2]\n\nThe bleeding contraindications are not identically worded: apixaban uses the broader label term “active pathological bleeding,” whereas warfarin specifies several bleeding-related conditions and clinical settings. [2][1]"
     },
     {
       "id": "public-3",
@@ -61,13 +58,11 @@
       "verdict": "pass",
       "disclaimer": true,
       "tools": [
-        "find_interactions",
-        "search_corpus",
-        "search_corpus"
+        "find_interactions"
       ],
-      "latency_s": 17.2,
+      "latency_s": 11.9,
       "llm_calls": 5,
-      "answer": "Sertraline plus warfarin increases bleeding risk, potentially including serious or life-threatening hemorrhage. Sertraline interferes with serotonin reuptake, and use with warfarin or other anticoagulants can add to this risk; bleeding events reported with serotonin-reuptake inhibitors range from ecchymosis, hematoma, epistaxis, and petechiae to life-threatening hemorrhages. [1]\n\nCarefully monitor the international normalized ratio (INR) in a patient taking warfarin who starts sertraline. Warfarin labeling also recommends more frequent INR monitoring when starting, stopping, or changing the dose of another drug, and close monitoring when a drug that increases bleeding risk is used with warfarin. [2][3][4]\n\n**Risk**\n- Sertraline is specifically listed among serotonin reuptake inhibitors known to increase bleeding risk when used concomitantly with warfarin. [4]\n- The sertraline label states that concurrent use with an anticoagulant may potentiate bleeding risk. [2]\n- Patients should be informed of the increased bleeding risk with combined sertraline and warfarin treatment. [1][5]\n\n**Monitoring**\n- Carefully monitor INR after sertraline is initiated. [1][2]\n- Use more frequent INR monitoring when sertraline is started, stopped, or its dose is changed. [3][6]\n- Monitor clinically for bleeding, since keeping INR in the therapeutic range does not eliminate bleeding risk. [3]"
+      "answer": "Sertraline can potentiate bleeding risk in a patient receiving warfarin. Sertraline and other serotonin reuptake inhibitors increase bleeding risk, and concomitant warfarin may add to that risk; reported events range from ecchymosis, hematoma, epistaxis, and petechiae to life-threatening hemorrhage. [1]\n\nCarefully monitor the international normalized ratio (INR) when sertraline is used in a patient taking warfarin. [2][1]\n\nWarfarin labeling also lists sertraline among serotonin reuptake inhibitors known to increase bleeding risk and recommends close monitoring when drugs that increase bleeding risk are used concomitantly with warfarin. [3]\n\nInform the patient about the increased bleeding risk with concurrent sertraline and warfarin. [2][1]"
     },
     {
       "id": "public-4",
@@ -82,9 +77,9 @@
       "tools": [
         "check_lab_threshold"
       ],
-      "latency_s": 9.7,
+      "latency_s": 9.4,
       "llm_calls": 5,
-      "answer": "Yes. An eGFR of 25 mL/min is below the labeled contraindication threshold, so metformin hydrochloride is contraindicated at this renal function level. [1][2][3]\n\nThe threshold is an eGFR below 30 mL/minute/1.73 m 2. [1][2]\n\nMetformin initiation is not recommended when eGFR is between 30 to 45 mL/minute/1.73 m 2. [1][3]\n\nFor patients already taking metformin whose eGFR later falls below 30 mL/minute/1.73 m 2, the label instructs discontinuation. [1]"
+      "answer": "Yes. An eGFR of 25 mL/min is below the labeled contraindication threshold, so metformin hydrochloride tablets are contraindicated at this level of renal function. [1][2]\n\nThe threshold is an eGFR **below 30 mL/minute/1.73 m 2**. [1][3]\n\nFor context, initiating metformin is not recommended when eGFR is between 30 to 45 mL/minute/1.73 m 2. [1][3]"
     },
     {
       "id": "extra-interaction",
@@ -101,9 +96,9 @@
         "search_corpus",
         "search_corpus"
       ],
-      "latency_s": 18.1,
+      "latency_s": 19.1,
       "llm_calls": 5,
-      "answer": "A patient taking apixaban should not start ibuprofen for back pain without first discussing it with their clinician, because ibuprofen is an NSAID and using NSAIDs with apixaban increases bleeding risk. [1][2]\n\n**Shared risk**\n- Apixaban can cause serious, potentially fatal bleeding, and concomitant NSAID use increases this risk. [1]\n- Chronic NSAID use with apixaban increases bleeding risk. [3]\n- Ibuprofen itself can cause serious, potentially fatal gastrointestinal bleeding, ulceration, or perforation, including with short-term therapy. [4]\n- Ibuprofen-associated GI-bleeding risk is increased by concomitant anticoagulant use. [4]\n- Signs that warrant stopping ibuprofen and contacting a clinician include stomach pain, heartburn, bloody or coffee-ground-like vomit, blood in the stool, or black, tarry stools. [5]\n\n**Only apixaban**\n- The apixaban label instructs patients to tell their clinician before taking any new drug, including nonprescription NSAIDs. [2]\n- Apixaban should not be discontinued without talking to the prescribing clinician, because premature discontinuation increases thrombotic-event risk. [6][2]\n- If the patient is having neuraxial anesthesia or spinal puncture, NSAIDs are among drugs that can increase the risk of spinal or epidural hematoma with apixaban. [6]\n\n**Only ibuprofen**\n- The ibuprofen label states that, for high-risk patients, alternate therapies that do not involve NSAIDs should be considered. [4]\n- If ibuprofen is used, its label advises the lowest effective dose for the shortest possible duration. [4]"
+      "answer": "Ibuprofen should not be started routinely for back pain in a patient taking apixaban without discussion with the prescribing clinician, because ibuprofen is an NSAID and concomitant NSAID use increases bleeding risk with apixaban. [1][2]\n\nApixaban increases the risk of serious, potentially fatal bleeding, and concomitant NSAIDs are among the drugs that increase this risk. [2] The apixaban label specifically states that chronic NSAID use increases bleeding risk. [3]\n\nIbuprofen itself can cause serious or fatal GI bleeding, ulceration, or perforation, including during short-term therapy. [4] Concomitant use of anticoagulants is a factor that increases the risk of GI bleeding with NSAIDs. [4] Although the ibuprofen label discusses coumarin-type anticoagulants rather than apixaban specifically, it advises caution with anticoagulants and describes a higher risk of serious GI bleeding when an NSAID and warfarin are used together. [5]\n\nThe patient should tell their clinician or pharmacist that they take apixaban before taking ibuprofen or any new over-the-counter medication. [6][1] Apixaban should not be stopped independently to permit ibuprofen use, because premature discontinuation increases thrombotic-event risk. [7]\n\nIf ibuprofen is nevertheless prescribed, the ibuprofen label advises using the lowest effective dose for the shortest possible duration, while recognizing that even short-term NSAID therapy is not without GI risk. [4] For patients at high risk of NSAID-related GI events, the ibuprofen label states that alternate therapies not involving NSAIDs should be considered. [4]"
     },
     {
       "id": "extra-mechanism",
@@ -118,16 +113,28 @@
       "tools": [
         "get_section"
       ],
-      "latency_s": 11.2,
+      "latency_s": 13.7,
       "llm_calls": 5,
-      "answer": "Atorvastatin is a selective, competitive inhibitor of HMG-CoA reductase, the rate-limiting enzyme that converts 3-hydroxy-3-methylglutaryl-coenzyme A to mevalonate, a precursor of sterols including cholesterol. [1]\n\nIt lowers plasma cholesterol and lipoprotein levels by inhibiting hepatic HMG-CoA reductase and cholesterol synthesis, while increasing hepatic cell-surface LDL receptors to enhance LDL uptake and catabolism. [1]\n\nAtorvastatin also reduces LDL production and the number of LDL particles. [1]\n\nThe liver is the primary site of action and the principal site of cholesterol synthesis and LDL clearance, and atorvastatin metabolites can also be pharmacologically active in humans. [2]"
+      "answer": "Atorvastatin is a selective, competitive inhibitor of HMG-CoA reductase, the rate-limiting enzyme that converts 3-hydroxy-3-methylglutaryl-coenzyme A to mevalonate, a precursor of sterols including cholesterol. [1]\n\nIt lowers plasma cholesterol and lipoprotein levels by inhibiting hepatic HMG-CoA reductase and cholesterol synthesis, while increasing hepatic cell-surface LDL receptors to enhance LDL uptake and catabolism. [1]\n\nAtorvastatin also reduces LDL production and the number of LDL particles. [1]\n\nThe liver is the primary site of action and the principal site of cholesterol synthesis and LDL clearance, and atorvastatin as well as some of its metabolites are pharmacologically active in humans. [2]"
     },
     {
       "id": "extra-max-dose",
       "set": "extra",
       "question": "What is the maximum daily dose of acetaminophen for adults, and what is the risk of exceeding it?",
-      "error": "Appel au LLM impossible : Error code: 400 - litellm.BadRequestError: AzureException BadRequestError - {\n  \"error\": {\n    \"message\": \"The response was filtered due to the prompt triggering Azure OpenAI’s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"prompt\",\n    \"code\": \"content_filter\",\n    \"content_filters\": [\n      {\n        \"blocked\": true,\n        \"source_type\": \"prompt\",\n        \"content_filter_raw\": [],\n        \"content_filter_results\": {\n          \"hate\": {\n            \"filtered\": false,\n            \"severity\": \"safe\"\n          },\n          \"sexual\": {\n            \"filtered\": false,\n            \"severity\": \"safe\"\n          },\n          \"violence\": {\n            \"filtered\": false,\n            \"severity\": \"safe\"\n          },\n          \"self_harm\": {\n            \"filtered\": true,\n            \"severity\": \"medium\"\n          },\n          \"jailbreak\": {\n            \"detected\": false,\n            \"filtered\": false\n          }\n        },\n        \"content_filter_offsets\": {\n          \"start_offset\": 0,\n          \"end_offset\": 5262,\n          \"check_offset\": 0\n        }\n      }\n    ],\n    \"innererror\": {\n      \"code\": \"ContentFiltered\"\n    }\n  }\n}\n\nLiteLLM: model group 'gpt-5.6-terra' failed with the error above and no fallback model group was found for it, so the request was not retried on another model. Fallbacks are configured for: gemini-2.5-pro, claude-3-haiku, gpt-5-mini, claude-fable-5, gpt-5.4, gpt-5-6-auto. Add a fallbacks entry for that model group (Router fallbacks or proxy router_settings.fallbacks) to retry on another model.",
-      "latency_s": 6.1
+      "source_recall": 1.0,
+      "missing_files": [],
+      "fact_coverage": 1.0,
+      "missing_facts": [],
+      "verdict": "pass",
+      "disclaimer": true,
+      "tools": [
+        "get_section",
+        "get_section",
+        "search_corpus"
+      ],
+      "latency_s": 18.4,
+      "llm_calls": 5,
+      "answer": "For adults, do not exceed **4,000 mg of acetaminophen in 24 hours**. The specific tablet product’s directions also limit adults and children 12 years and over to **6 tablets in 24 hours**, unless directed by a doctor. [1][2]\n\nExceeding 4,000 mg in 24 hours can cause **severe liver damage**. Liver-damage risk also applies when acetaminophen is taken with other acetaminophen-containing drugs or with 3 or more alcoholic drinks every day while using the product. [1]\n\nIn an overdose, obtain medical help or contact Poison Control immediately at **1-800-222-1222**; prompt attention is critical even when no symptoms are apparent. [1]"
     },
     {
       "id": "extra-contrast",
@@ -140,12 +147,11 @@
       "verdict": "pass",
       "disclaimer": true,
       "tools": [
-        "search_corpus",
-        "search_corpus"
+        "get_section"
       ],
-      "latency_s": 16.2,
+      "latency_s": 12.6,
       "llm_calls": 5,
-      "answer": "Not always. Metformin should be stopped at the time of, or before, an iodinated-contrast imaging procedure—including a CT scan with iodinated contrast—if the patient has an eGFR between 30 and 60 mL/min/1.73 m², a history of hepatic impairment, alcoholism, or heart failure, or will receive intra-arterial iodinated contrast. [1]\n\nFor these patients, re-evaluate eGFR 48 hours after the imaging procedure and restart metformin only if renal function is stable. [1]\n\nThe rationale is that intravascular iodinated contrast in metformin-treated patients has been associated with an acute decrease in renal function and lactic acidosis. [1]\n\nMetformin is contraindicated when eGFR is less than 30 mL/min/1.73 m². [2]\n\nThe cited label does not specifically instruct stopping metformin for iodinated contrast in patients outside those listed risk groups, so the corpus does not support a universal requirement to stop it before every contrast CT. [1]"
+      "answer": "Not always. For a CT scan using iodinated contrast, stop metformin at the time of, or before, the procedure if the patient has an eGFR between 30 and 60 mL/min/1.73 m 2, a history of hepatic impairment, alcoholism, or heart failure, or will receive intra-arterial iodinated contrast. [1]\n\nRe-evaluate eGFR 48 hours after the imaging procedure and restart metformin only if renal function is stable. [1]\n\nThe label attributes this precaution to reports that intravascular iodinated contrast in metformin-treated patients has caused acute decreases in renal function and lactic acidosis. [1]\n\nFor a patient outside these listed groups receiving standard intravenous iodinated contrast, the provided label passage does not instruct routine withholding of metformin. [1]"
     },
     {
       "id": "extra-allergy",
@@ -158,11 +164,12 @@
       "verdict": "pass",
       "disclaimer": true,
       "tools": [
-        "get_section"
+        "get_section",
+        "search_corpus"
       ],
-      "latency_s": 20.7,
+      "latency_s": 13.1,
       "llm_calls": 5,
-      "answer": "Yes. Amoxicillin is contraindicated in patients who have had a serious hypersensitivity reaction to penicillins, including reactions such as anaphylaxis or Stevens-Johnson syndrome. [1]"
+      "answer": "Yes. Amoxicillin is contraindicated in a patient with a history of a **serious hypersensitivity reaction** to penicillins, such as anaphylaxis or Stevens-Johnson syndrome, because penicillins are β-lactam antibacterial drugs. [1]\n\nBefore starting amoxicillin, the label directs clinicians to carefully ask about prior hypersensitivity reactions to penicillins, cephalosporins, and other allergens. [2]"
     },
     {
       "id": "extra-aggregation",
@@ -175,11 +182,11 @@
       "verdict": "pass",
       "disclaimer": true,
       "tools": [
-        "search_corpus"
+        "get_section"
       ],
-      "latency_s": 11.1,
+      "latency_s": 13.0,
       "llm_calls": 5,
-      "answer": "The warfarin label lists the following drugs as examples known to increase bleeding risk when used concomitantly with warfarin. [1]\n\n**Anticoagulants**\n- argatroban, dabigatran, bivalirudin, desirudin, heparin, lepirudin. [1]\n\n**Antiplatelet agents**\n- aspirin, cilostazol, clopidogrel, dipyridamole, prasugrel, ticlopidine. [1]\n\n**Nonsteroidal anti-inflammatory agents**\n- celecoxib, diclofenac, diflunisal, fenoprofen, ibuprofen, indomethacin, ketoprofen, ketorolac, mefenamic acid, naproxen, oxaprozin, piroxicam, sulindac. [1]\n\n**Serotonin reuptake inhibitors**\n- citalopram, desvenlafaxine, duloxetine, escitalopram, fluoxetine, fluvoxamine, milnacipran, paroxetine, sertraline, venlafaxine, vilazodone. [1]\n\nThe label says to closely monitor patients receiving any of these drugs with warfarin because concomitant use increases bleeding risk. [1]"
+      "answer": "The warfarin label lists the following drugs as increasing bleeding risk when used concomitantly with warfarin; it recommends closely monitoring patients receiving any of these combinations. [1]\n\n- **Anticoagulants:** argatroban, dabigatran, bivalirudin, desirudin, heparin, lepirudin. [1]\n- **Antiplatelet agents:** aspirin, cilostazol, clopidogrel, dipyridamole, prasugrel, ticlopidine. [1]\n- **Nonsteroidal anti-inflammatory agents:** celecoxib, diclofenac, diflunisal, fenoprofen, ibuprofen, indomethacin, ketoprofen, ketorolac, mefenamic acid, naproxen, oxaprozin, piroxicam, sulindac. [1]\n- **Serotonin reuptake inhibitors:** citalopram, desvenlafaxine, duloxetine, escitalopram, fluoxetine, fluvoxamine, milnacipran, paroxetine, sertraline, venlafaxine, vilazodone. [1]\n\nThe label additionally notes that garlic and *Ginkgo biloba* may cause bleeding events when taken alone, with effects expected to be additive to warfarin’s anticoagulant effects. [2]"
     },
     {
       "id": "extra-out-of-corpus",
@@ -189,17 +196,16 @@
       "missing_files": [],
       "fact_coverage": 0.0,
       "missing_facts": [
-        "not (covered|included|in the corpus|available)|does not (cover|contain|include)|no (FDA )?label|only .*glossary"
+        "no (passage|label|information|section)|not (covered|included|in the corpus|available|found)|does not (cover|contain|include)|cannot be (established|determined|answered)|only .*glossary"
       ],
       "verdict": "flagged",
       "disclaimer": true,
       "tools": [
-        "get_section",
-        "search_corpus"
+        "get_section"
       ],
-      "latency_s": 16.6,
+      "latency_s": 17.2,
       "llm_calls": 8,
-      "answer": "The supplied evidence corpus contains no passage listing rivaroxaban contraindications; therefore, its contraindications cannot be established from these materials."
+      "answer": "The available evidence is insufficient to identify rivaroxaban contraindications from an official prescribing-information or label passage."
     },
     {
       "id": "extra-french",
@@ -215,9 +221,9 @@
         "search_corpus",
         "get_section"
       ],
-      "latency_s": 19.5,
+      "latency_s": 20.7,
       "llm_calls": 5,
-      "answer": "Les effets indésirables les plus fréquents de la sertraline, définis dans les essais contrôlés comme survenant chez ≥5 % des patients et au moins deux fois plus souvent qu’avec le placebo, sont les nausées, la diarrhée/selles molles, les tremblements, la dyspepsie, la diminution de l’appétit, l’hyperhidrose, l’absence d’éjaculation et la diminution de la libido. [1]\n\n- **Digestifs :** nausées (26 % contre 12 % sous placebo), diarrhée/selles molles (20 % contre 10 %), bouche sèche (14 % contre 9 %), dyspepsie (8 % contre 4 %), constipation (6 % contre 4 %) et vomissements (4 % contre 1 %). [2]\n- **Sommeil et système nerveux :** insomnie (20 % contre 13 %), vertiges (12 % contre 8 %), somnolence (11 % contre 6 %) et tremblements (9 % contre 2 %). [2]\n- **Généraux et psychiques :** fatigue (12 % contre 8 %) et agitation (8 % contre 5 %). [2]\n- **Appétit et transpiration :** diminution de l’appétit (7 % contre 2 %) et hyperhidrose (7 % contre 3 %). [2]\n- **Sexuels :** chez les hommes, absence d’éjaculation (8 % contre 1 %), baisse de la libido (7 % contre 2 %), dysfonction érectile (4 % contre 1 %), trouble de l’éjaculation (3 % contre 0 %) et dysfonction sexuelle masculine (2 % contre 0 %) ; chez les femmes, la baisse de la libido était rapportée chez 4 % contre 2 % sous placebo. [3]\n\nLes taux issus des essais cliniques ne peuvent pas être directement comparés à ceux d’autres médicaments et peuvent ne pas refléter les taux observés en pratique. [1]\n\nLes effets sexuels peuvent être sous-déclarés, notamment parce que les patients et les soignants peuvent hésiter à les aborder. [3]"
+      "answer": "Les effets indésirables les plus fréquents de la sertraline chez l’adulte sont les nausées (26 %), la diarrhée/selles molles (20 %), l’insomnie (20 %), la sécheresse buccale (14 %), la fatigue (12 %), les vertiges (12 %), la somnolence (11 %) et les tremblements (9 %). [1]\n\nDans les essais contrôlés contre placebo regroupés, les effets considérés comme les plus fréquents, définis par une fréquence ≥5 % et au moins deux fois celle du placebo, étaient les nausées, la diarrhée/selles molles, les tremblements, la dyspepsie, la diminution de l’appétit, l’hyperhidrose, l’absence d’éjaculation et la diminution de la libido. [2]\n\nLes fréquences rapportées incluaient aussi la dyspepsie (8 %), l’agitation (8 %), la diminution de l’appétit (7 %), l’hyperhidrose (7 %), la diminution de la libido (6 %) et la constipation (6 %). [1]\n\nLes effets sexuels sont fréquents et leur incidence déclarée peut être sous-estimée. [3] Chez les hommes, ils incluaient l’absence d’éjaculation (8 %), la baisse de libido (7 %), la dysfonction érectile (4 %) et les troubles de l’éjaculation (3 %); chez les femmes, la baisse de libido était rapportée chez 4 % des patientes. [3]\n\nLes effets ayant le plus souvent conduit à l’arrêt du traitement dans les essais contrôlés étaient les nausées (3 %), la diarrhée (2 %), l’agitation (2 %) et l’insomnie (2 %). [1]"
     }
   ]
 }
