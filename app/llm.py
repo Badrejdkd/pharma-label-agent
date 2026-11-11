@@ -99,12 +99,16 @@ class LLMClient:
         self,
         messages: list[dict[str, Any]],
         tools: list[dict[str, Any]] | None = None,
+        tool_choice: str = "auto",
     ) -> ChatCompletionMessage:
-        """Un appel de chat ; renvoie le message de l'assistant (texte et/ou appels d'outils)."""
+        """Un appel de chat ; renvoie le message de l'assistant (texte et/ou appels d'outils).
+
+        tool_choice : "auto" (le modèle décide) ou "required" (au moins un appel d'outil).
+        """
         kwargs: dict[str, Any] = {}
         if tools:
             kwargs["tools"] = tools
-            kwargs["tool_choice"] = "auto"
+            kwargs["tool_choice"] = tool_choice
         try:
             return self._create(messages, **kwargs)
         except APIError as exc:
